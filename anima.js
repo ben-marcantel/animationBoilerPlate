@@ -25,8 +25,8 @@ function Circle(x,y,dx,dy,radius,dRadius,r,dr,g,dg,b,db){
         // c.lineTo(this.x*x,this.y*y);
         c.strokeStyle='rgb(' + this.r +',' + this.g + ',' + this.b + ')';
         c.stroke();
-        c.fillStyle = 'rgb(' + this.r +',' + this.g + ',' + this.b + ')';
-        c.fill();
+        // c.fillStyle = 'rgb(' + this.r +',' + this.g + ',' + this.b + ')';
+        // c.fill();
     }
 
     this.update = function(){
@@ -62,10 +62,10 @@ let circleArray =[];
 
 for (i=0;i<1;i++){
    let radius = Math.floor((Math.random() * 100) +6);
-   let dRadius =2;
+   let dRadius =1;
    let x = Math.random() * (innerWidth - radius* 2) + radius;
    let y = Math.random()* (innerHeight - radius *2) +  radius;
-   let dx = 1
+   let dx = 1/2 
    let dy = 1
    let r = Math.floor((Math.random() * 255) +1);
    let dr= .25;
@@ -79,7 +79,7 @@ for (i=0;i<1;i++){
 
 function animate(){
         requestAnimationFrame(animate);
-        c.clearRect(0, 0, innerWidth, innerHeight);  
+        // c.clearRect(0, 0, innerWidth, innerHeight);  
         for(i=0;i<circleArray.length; i++){
             circleArray[i].update();
         } 
